@@ -1,7 +1,10 @@
 <template >
 
     <nav>
-        <RouterLink v-for="link in links" :key="link.name" :to="link.path">
+        <RouterLink 
+          v-for="link in links" 
+          :key="link.name" 
+          :to="link.path">
           {{ link.title  }}
         </RouterLink>
 
@@ -11,6 +14,7 @@
 </template>
 <script setup lang="ts" > 
 import type { IRouterLink} from '@/router/list-routes-nav'
+
 interface Props {
   title?: string;
   links: IRouterLink[];
@@ -18,10 +22,12 @@ interface Props {
 
 }
 //para definer las popperties del componente y default prop
-withDefaults(defineProps<Props>(), {
+ withDefaults(defineProps<Props>(), {
   title: 'Vite ',
   isSecondary: false
 })
+
+// const links = toRef(props, 'links');
 
 </script>
 <style lang="scss" scoped>

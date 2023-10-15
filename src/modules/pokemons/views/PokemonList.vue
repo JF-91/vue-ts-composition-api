@@ -6,7 +6,7 @@ const { pokemons, count, isLoading, error, isError } = usePokemons()
 
 
 </script>
-<template lang="">
+<template >
     <div>
         <h1>Pokemon List</h1>
         <span v-if="isLoading" >Cargando...</span>
@@ -14,7 +14,7 @@ const { pokemons, count, isLoading, error, isError } = usePokemons()
 
         <div v-else>
             <h3>{{ count }}</h3>
-            <PokemonCardList :pokemons="pokemons" />
+            <PokemonCardList :pokemons="pokemons ?? []" />
             
         </div>
     </div>

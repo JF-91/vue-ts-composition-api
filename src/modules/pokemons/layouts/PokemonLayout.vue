@@ -9,6 +9,7 @@ const routerCustom: IRouterLink[] = pokemonRoute.children?.map( ({name, path,  p
         name: name?.toString()  ?? "",
         path: path?.toString()  ?? "",
         title: ( props as { title?: string}).title ?? "",
+        visible: ( props as { visible?: boolean}).visible ?? true
     }
 }) || [];
 

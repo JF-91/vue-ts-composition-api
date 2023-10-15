@@ -2,7 +2,7 @@
 import type { Pokemon } from '../interfaces';
 import PokemonCard from './PokemonCard.vue';
 interface Props{
-    pokemons: Pokemon[]
+    pokemons: Pokemon[] 
 }
 
 defineProps<Props>()
