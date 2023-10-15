@@ -1,11 +1,18 @@
 <script lang="ts" setup>
+
 import type { Pokemon } from '../interfaces';
 import PokemonCard from './PokemonCard.vue';
+
+
+
+
 interface Props{
     pokemons: Pokemon[] 
 }
 
-defineProps<Props>()
+ defineProps<Props>()
+
+
 
 
 </script>
@@ -13,7 +20,7 @@ defineProps<Props>()
 
 <template >
     <div class="card-list">
-        <span v-for="pokemon in pokemons" :key="pokemon.id">
+        <span v-for="pokemon in pokemons" :key="pokemon.id"  >
             <PokemonCard  :pokemon="pokemon"/>
         </span>
     </div>
