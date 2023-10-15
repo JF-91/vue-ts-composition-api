@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/shared/views/HomeView.vue'
+import {pokemonRoute} from '@/modules/pokemons/router'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,13 +22,13 @@ const router = createRouter({
     {
       path: '/counter',
       name: 'counter',
-      component: () => import('@/counter/views/CounterView.vue')
+      component: () => import('@/modules/counter/views/CounterView.vue')
     },
     {
-      path:'/pokemon',
-      name:'pokemon',
-      component: () => import('@/Pokemons/layouts/PokemonLayout.vue')
+      ...pokemonRoute,
+      path: '/pokemons',
     },
+
 
     {
       path: '/:pathMatch(.*)*',

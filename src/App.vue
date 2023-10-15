@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+
 import NavbarApp from '@/shared/components/NavbarApp.vue'
+import  { routerLinks } from '@/router/list-routes-nav';
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import NavbarApp from '@/shared/components/NavbarApp.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <NavbarApp />
+      <NavbarApp  title="Vite" :links="routerLinks" />
     </div>
   </header>
 
@@ -59,3 +60,4 @@ header {
   }
 }
 </style>
+@/router/list-routes-nav

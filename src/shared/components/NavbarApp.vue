@@ -1,21 +1,27 @@
-<template lang="">
+<template >
 
     <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/counter">Counter</RouterLink>
-        <RouterLink to="/pokemon">Pokemon</RouterLink>
+        <RouterLink v-for="link in links" :key="link.name" :to="link.path">
+          {{ link.title  }}
+        </RouterLink>
+
     </nav>
 
 
 </template>
-<script lang="ts" > 
-import {RouterLink, RouterView} from 'vue-router';
+<script setup lang="ts" > 
+import type { IRouterLink} from '@/router/list-routes-nav'
+interface Props {
+  title?: string;
+  links: IRouterLink[];
+  isSecondary?: boolean;
 
-    export default {
-        name: 'NavbarApp',
-
-    }
+}
+//para definer las popperties del componente y default prop
+withDefaults(defineProps<Props>(), {
+  title: 'Vite ',
+  isSecondary: false
+})
 
 </script>
 <style lang="scss" scoped>
@@ -28,7 +34,7 @@ import {RouterLink, RouterView} from 'vue-router';
   flex-direction: column;
 }
 
-nav a.router-link-exact-active {
+nav a.router-link-active {
   color: var(--color-text);
 }
 
@@ -56,4 +62,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-</style>
+</style>@/router/list-routes-nav
